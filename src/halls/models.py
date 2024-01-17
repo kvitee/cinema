@@ -24,7 +24,7 @@ class Hall(models.Model):
                 name="hall_cost_factor_positive"
             ),
             UniqueConstraint(
-                fields=["name"],
+                fields=("name",),
                 name="hall_unq"
             ),
         ]
@@ -53,7 +53,7 @@ class Seat(models.Model):
                 name="seat_cost_factor_positive"
             ),
             UniqueConstraint(
-                fields=["hall_id", "row_number", "seat_number"],
+                fields=("hall_id", "row_number", "seat_number"),
                 name="seat_unq"
             ),
         ]
